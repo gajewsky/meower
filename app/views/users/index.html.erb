@@ -1,0 +1,28 @@
+<% if current_user %>
+    <% render 'meowes/new_form' %>
+    <% end %>
+    <div class="panel left">
+      <h1>Public Profiles</h1>
+      <% @users.each do |user| %>
+          <div class="meowerWrapper">
+            <a href="<%= user_path user %>">
+                <img class="avatar" src="<%= user.avatar_url %>" />
+                <span class="name"><%= user.name %></span>
+            </a>
+            @<%= user.username %>
+            <p>
+                <%= user.meowes.length %> Meowes
+                <span class="spacing"><%= user.followers.length %> Followers</span>
+                <span class="spacing"><%= user.followeds.length %>  Following</span>
+
+             </p>
+            <% if user.bio %>
+               <p> <%= user.bio %> </p>
+                <% elsif user.meowes.first %>
+               <p> <%= user.meowes.first.content %></p>
+                <% end %>
+          </div>
+<% end %>
+
+</div>
+

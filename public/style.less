@@ -1,0 +1,306 @@
+@text-color: #3F3E3D;
+@border-color: #D2D2D2;
+@content-width: 860px;
+
+.antialiased (@color) {
+	color: @color;
+	text-shadow: @color 0 0 1px;
+}
+
+.gradient4f (@p1, @c1, @p2, @c2, @p3, @c3, @p4, @c4) {
+	background: @c1;
+	background: -moz-linear-gradient(top,  @c1 @p1,  @c2 @p2,  @c3 @p3,  @c4 @p4);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(@p1, @c1), color-stop(@p2, @c2), color-stop(@p3, @c3), color-stop(@p4, @c4));
+	background: -webkit-linear-gradient(top, @c1 @p1, @c2 @p2, @c3 @p3, @c4 @p4);
+	background: -o-linear-gradient(top, @c1 @p1, @c2 @p2, @c3 @p3, @c4 @p4);
+	background: -ms-linear-gradient(top, @c1 @p1, @c2 @p2, @c3 @p3, @c4 @p4);
+	background: linear-gradient(to bottom, @c1 @p1, @c2 @p2, @c3 @p3, @c4 @p4);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@c1', endColorstr='@c4', GradientType=0);
+}
+
+* {
+	font-family: Helvetica, Arial, sans-serif;
+	color: @text-color;
+}
+
+body {
+	background: white url(gfx/PATTERND.png);
+	margin: 0; padding: 0;
+}
+
+input {
+	width: 236px;
+	height: 38px;
+	border: 1px solid @border-color;
+	padding: 0 10px;
+	outline: none;
+	font-size: 17px;
+	&:focus {
+		background: #FFFDF2;
+	}
+}
+
+input[type="submit"] {
+	height: 36px;
+	width: auto;
+	border:none;
+    color: white;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 0 20px;
+	cursor: pointer;
+	.gradient4f(0%, #f35f55, 23%, #f35f55, 86%, #f35f55, 100%, #f35f55);
+}
+
+a {
+	text-decoration: none;
+	.antialiased(#f35f55);
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+.wrapper {
+	width: @content-width;
+	margin: auto;
+  input[] {
+    height:35px;
+    width:185px;
+    background: #1f1c17;
+    margin-top: 20px;
+    border: none;
+    color:#dfdfdf;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;}
+}
+
+header {
+  a {   position: relative;
+    top:-20px;
+    left:240px;
+    text-decoration: none;
+    .antialiased(#f35f55);
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+	background:#dfdfdf ;
+	height: 100px;
+	width: 100%;
+  input[type=text] {
+    height:35px;
+    width:174px;
+    background: #1f1c17;
+
+  }input[type=password] {
+     height:35px;
+     width:174px;
+     background: #1f1c17;
+
+   }
+  input[type=submit] {
+    height:35px;
+    width:50px;
+    background: #f35f55;
+
+  }
+
+	div.wrapper {
+		padding: 11px 0;
+		img {
+			position: relative;
+			top: 0px;
+            left: 0px;
+			margin: 0 15px 0 0;
+		}
+		span {
+			font-size: 18px;
+			margin: 0 42px 0 0;
+		}
+		form {position: relative;
+          top:-45px;
+          left:228px;
+
+			display: inline;
+			input {
+
+			  margin: 0 0 0 9px;
+			}
+		}
+		#btnLogOut {
+			float: right;
+			margin: 9px 0 0 0;
+		}
+	}
+
+
+}
+
+#content  {
+
+	margin-bottom: 15px;
+	min-height: 660px;
+
+
+  div.wrapper {
+		margin: 38px auto;
+		img {
+			border-radius: 6px;
+			float: left;
+		}
+		div.panel {
+			border: 1px solid @border-color;
+			background: white;
+			margin: 0;
+			margin-bottom: 29px;
+			border-radius: 6px;
+			font-size: 14px;
+			&.rightNew {
+
+               background:#dfdfdf ;
+               width: 460px;
+               height: 555px;
+               float: right;
+               textarea.meowerText {
+                 width: 249px;
+                 height: 160px;
+                 border: 1px solid @border-color;
+               }
+               input[] {
+                 background: #1f1c17;
+                 margin-top: 20px;
+                 height:50px;
+                 width:400px;
+                 color:#dfdfdf;
+
+
+               }
+               input[type=submit] {
+                 background: url("gfx/SIGNUPBUTT.png");
+                 margin-top: 45px;
+                 height:90px;
+                 width:302px;
+
+               }
+
+             }
+          &.right {
+
+            background:#dfdfdf ;
+            width: 300px;
+            height: 235px;
+            float: right;
+            textarea.meowerText {
+              width: 249px;
+              height: 160px;
+              border: 1px solid @border-color;
+            }
+            input[] {
+              background: #1f1c17;
+              margin-top: 20px;
+              height:50px;
+              width:400px;
+              color:#dfdfdf;
+
+
+            }
+            input[type=submit] {
+              background:#f35f55 ;
+              margin: 0px 20%;
+
+              height:45px;
+              width:120px;
+
+            }
+
+          }
+			&.left {
+				width: @content-width - 327;
+				float: left;
+				div.meowerWrapper {
+					padding: 15px 0;
+					border-bottom: 1px solid @border-color;
+					&:last-child {
+						border: none;
+					}
+					span {
+						&.name {
+							font-size: 18px;
+							color: #f35f55;
+						}
+						&.time {
+							font-size: 12px;
+							color: #CCC;
+						}
+					}
+					img.avatar {
+						margin: 0 19px 0 20px;
+						float: left;
+					}
+					p {
+						margin: 5px 50px 0 90px;
+						padding: 0;
+						text-align: justify;
+						line-height: 1.5;
+						.antialiased(@text-color);
+						span.spacing {
+							padding-left: 9px;
+							margin-left: 9px;
+							height: 10px;
+							border-left: 1px solid @border-color;
+						}
+					}
+				}
+			}
+			
+			* {
+				margin: 6px 0;
+			}
+			form {
+				padding: 0 23px;
+			}
+			h1 {
+				border-bottom: 1px solid @border-color;
+				margin: 5px 0;
+				font-weight: normal;
+				font-size: 18px;
+				padding: 13px 23px;
+				height: 23px;
+			}
+			p {
+				padding: 0 24px;
+				margin: 18px 0;
+			}
+		}
+    .flash {
+      padding: 10px;
+      margin: 20px 0;
+      &.error{
+        background: #ffefef;
+        color: #4c1717;
+        border: 1px solid #4c1717;
+      }
+      &.warning{
+        background: #ffe4c1;
+        color: #79420d;
+        border: 1px solid #79420d;
+      }
+      &.notice{
+        background: #efffd7;
+        color: ##35f555;
+        border: 1px solid #8ba015;
+      }
+    }
+	.limit{
+	color:red;}
+	}
+}
+
+footer {
+	background: #dfdfdf;
+	height: 100px;
+	font-size: 14px;
+	clear: both;
+
+}

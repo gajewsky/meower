@@ -1,0 +1,12 @@
+<div class="panel right">
+
+  <%=form_for @meow do |f|  %>
+    <%= f.text_area :content, class: "meowerText", id: "meowerText"  %>
+    <%= f.submit "Meow!", id:'meowerButton' %>
+    <span id="charCount">0</span>
+
+
+  <% end %>
+
+
+</div>

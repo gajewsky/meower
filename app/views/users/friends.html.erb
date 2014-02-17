@@ -1,0 +1,20 @@
+<% if current_user %>
+    <% render 'meowes/new_form' %>
+
+
+<% end %>
+<div class="panel left">
+  <h1>Friends Meowes</h1>
+  <% @meowes.each do |meow| %>
+      <div class="meowerWrapper">
+        <a href="<%= user_path meow.user  %>" >
+          <img class="avatar" src="<%= meow.user.avatar_url %>"/>
+          <span class="name"> <%=meow.user.name  %></span>
+        </a>
+        @<%=meow.user.username  %>
+        <span class="time"><%= time_ago_in_words(meow.created_at) %></span>
+        <p><%= meow.content %></p>
+      </div>
+  <% end %>
+</div>
+
