@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-   def new
+  def new
      if current_user
        redirect_to friends_path
      else
@@ -8,12 +8,12 @@ class UsersController < ApplicationController
      end
 
 
-
    end
 
   def create
     @user = User.new(params[:user])
       if @user.save
+        session[:user_id] = @user.id
         redirect_to @user, notice: "Thank you for signing up for Meower"
       else
         render 'new'
@@ -58,4 +58,3 @@ class UsersController < ApplicationController
 
   end
 end
-
